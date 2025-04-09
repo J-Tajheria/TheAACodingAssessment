@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <main className="w-full max-w-7xl mx-auto px-4 py-6 ">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold"> Car Viewer</h1>
+        <h1 className="text-3xl font-bold"> Car Health Monitoring System</h1>
         <button
           onClick={() => setShowForm(true)}
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"

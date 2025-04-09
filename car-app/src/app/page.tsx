@@ -1,4 +1,5 @@
 'use client';
+import React from 'react'; 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Car } from '@/types/car';
@@ -71,7 +72,7 @@ export default function Home() {
               onClick={() => deleteCar(car.id)}
               className="text-red-600 hover:underline text-sm mt-1 w-fit"
             >
-              Delete
+              Deactivate Car
             </button>
           </div>
         ))

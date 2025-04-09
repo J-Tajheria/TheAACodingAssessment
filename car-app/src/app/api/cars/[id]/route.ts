@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { cars } from '@/data/cars';
 
+// Handles GET (single car by ID) and DELETE (remove by ID)
+
 export async function GET(_: Request, { params }: { params: { id: string } }) {
   const car = cars.find((c) => c.id === parseInt(params.id));
   return car

@@ -1,4 +1,5 @@
 'use client';
+// Car detail page — shows a single car's info based on route ID
 import React from 'react'; 
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -10,6 +11,7 @@ export default function CarDetail() {
   const [car, setCar] = useState<Car | null>(null);
   const [error, setError] = useState(false);
 
+  // Fetch car data when ID param is available
   useEffect(() => {
     if (id) {
       fetch(`/api/cars/${id}`)

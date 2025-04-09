@@ -1,15 +1,17 @@
 'use client';
+// Main home page — shows list of cars and allows adding a new car
 import React from 'react'; 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Car } from '@/types/car';
 
-
+// State setup for car list, form values, and modal visibility
 export default function Home() {
   const [cars, setCars] = useState<Car[]>([]);
   const [form, setForm] = useState({ make: '', model: '', year: '', vrn: ''});
   const [showForm, setShowForm] = useState(false);
 
+  // On component load, fetch all cars from the API
   useEffect(() => {
     fetch('/api/cars')
       .then((res) => {
@@ -23,7 +25,7 @@ export default function Home() {
       });
   }, []);
   
-
+  // Submit form: POST new car, update state, close modal
   async function addCar(e: React.FormEvent) {
     e.preventDefault();
     const res = await fetch('/api/cars', {
@@ -37,6 +39,7 @@ export default function Home() {
     setShowForm(false);
   }
 
+  // Delete car by ID from local state
   async function deleteCar(id: number) {
     await fetch(`/api/cars/${id}`, { method: 'DELETE' });
     setCars(cars.filter(c => c.id !== id));

@@ -22,7 +22,7 @@ Jest + RTL
 1. Clone the Repository:
 ```
     git clone https://github.com/J-Tajheria/TheAACodingAssessment.git
-    cd car-viewer-app
+    cd car-app
 ```
 
 2. Install Dependencies:
